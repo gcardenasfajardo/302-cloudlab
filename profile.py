@@ -18,9 +18,9 @@ node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU18-64-STD"
 node.routable_control_ip = "true"
 
 node.addService(rspec.Execute(shell="/bin/sh",
-                              command="sudo apt update"))
+                              command="wget https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86.sh"))
 node.addService(rspec.Execute(shell="/bin/sh",
-                              command="sudo apt install -y apache2"))
+                              command="bash Anaconda3-5.2.0-Linux-x86.sh -y"))
 node.addService(rspec.Execute(shell="/bin/sh",
                               command='sudo suwf allow in "Apache Full"'))
 node.addService(rspec.Execute(shell="/bin/sh",
