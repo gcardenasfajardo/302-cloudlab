@@ -25,5 +25,10 @@ node.addService(rspec.Execute(shell="/bin/sh",
                               command='sudo suwf allow in "Apache Full"'))
 node.addService(rspec.Execute(shell="/bin/sh",
                               command='sudo systemctl status apache2'))
+node.addService(rspec.Execute(shell="/bin/sh",
+                              command='git clone ttps://github.com/longld/peda.git ~/peda'))
+node.addService(rspec.Execute(shell="/bin/sh",
+                              command='echo "source ~/peda/peda.py" >> ~/.gdbinit'))
+
 # Print the RSpec to the enclosing page.
 portal.context.printRequestRSpec()
